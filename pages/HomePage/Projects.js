@@ -5,7 +5,7 @@ import Featured from "../../components/Featured";
 
 const useStyles = makeStyles((theme) => ({
   container: {
-    height: "100vh",
+    minHeight: "100vh",
     width: "100vw",
     background: "url('/project_bg.jpg')",
     backgroundBlendMode: "fixed",
@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
   darkOverlay: {
     paddingTop: 65,
     background: fade(theme.palette.common.black, 0.7),
-    height: "100%",
+    minHeight: "100vh",
   },
   title: {
     color: "#ccc",

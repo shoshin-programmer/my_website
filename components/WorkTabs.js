@@ -44,12 +44,15 @@ function a11yProps(index) {
 
 const useStyles = makeStyles((theme) => ({
   appBar: {
-    background: fade(theme.palette.common.white, 0.2),
+    background: fade(theme.palette.common.black, 0.9),
     color: "#FFFFFF",
   },
   panel: {
     minHeight: "400px",
-    background: fade(theme.palette.common.white, 0.1),
+    background: fade(theme.palette.common.black, 0.7),
+    [theme.breakpoints.up("md")]: {
+      minHeight: "300px",
+    },
   },
   header: {
     color: "#cccccc",
@@ -60,6 +63,10 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     justifyContent: "center",
     flexDirection: "column",
+    [theme.breakpoints.up("md")]: {
+      justifyContent: "center",
+      flexDirection: "row",
+    },
   },
   companyLogo: {
     maxHeight: 150,

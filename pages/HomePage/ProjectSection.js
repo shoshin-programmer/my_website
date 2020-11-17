@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
   content: {
     padding: theme.spacing(7),
     background: fade(theme.palette.common.white, 0.7),
-    height: "100%",
+    minHeight: "100%",
     color: "#000000",
   },
   titleContainer: {

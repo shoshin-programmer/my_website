@@ -5,7 +5,7 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 
 const useStyles = makeStyles((theme) => ({
   landingContainer: {
-    height: "100vh",
+    minHeight: "100vh",
     width: "100vw",
     background: "url('/landing.jpg')",
     backgroundBlendMode: "fixed",
@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
   darkOverlay: {
     paddingTop: 65,
     background: fade(theme.palette.common.black, 0.7),
-    height: "100%",
+    minHeight: "100vh",
   },
   landingText: {
     color: "#ccc",
