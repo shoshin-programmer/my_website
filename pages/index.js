@@ -20,12 +20,6 @@ const projects = {
 };
 
 const useStyles = makeStyles((theme) => ({
-  // container: {
-  //   height: "100vh",
-  //   width: "100vw",
-  //   background: "url('/landing.jpg')",
-  //   backgroundSize: "cover",
-  // },
 }));
 
 export default function Home() {
