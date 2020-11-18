@@ -9,6 +9,7 @@ import SwipeableDrawer from "@material-ui/core/SwipeableDrawer";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import Button from "@material-ui/core/Button";
+import Fade from "react-reveal/Fade";
 
 const useStyles = makeStyles((theme) => ({
   appBar: {
@@ -63,7 +64,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   mobileList: {
-    textAlign: 'center',
+    textAlign: "center",
   },
   buttonText: {
     textTransform: "lowercase",
@@ -87,85 +88,94 @@ export default function Header() {
 
   return (
     <div className={classes.grow}>
-      <AppBar position="fixed" className={classes.appBar}>
-        <Toolbar>
-          <div className={classes.headerLogo}>mark.the.dev</div>
-          <div className={classes.desktopView}>
-            <div className={classes.headerLinks}>
-              <Link
-                component="button"
-                variant="body2"
-                className={classes.headerLinks}
-                onClick={() => alert("In progress.")}
-              >
-                {siteLinks[0]}
-              </Link>
-              <Link
-                component="button"
-                variant="body2"
-                className={classes.headerLinks}
-              >
-                <a target="_blank" href="https://github.com/shoshin-programmer">
-                  {siteLinks[1]}
+      <Fade cascade duration={4000} top>
+        <AppBar position="fixed" className={classes.appBar}>
+          <Toolbar>
+            <div className={classes.headerLogo}>mark.the.dev</div>
+            <div className={classes.desktopView}>
+              <div className={classes.headerLinks}>
+                <Link
+                  component="button"
+                  variant="body2"
+                  className={classes.headerLinks}
+                  onClick={() => alert("In progress.")}
+                >
+                  {siteLinks[0]}
+                </Link>
+                <Link
+                  component="button"
+                  variant="body2"
+                  className={classes.headerLinks}
+                >
+                  <a
+                    target="_blank"
+                    href="https://github.com/shoshin-programmer"
+                  >
+                    {siteLinks[1]}
+                  </a>
+                </Link>
+                <a target="_blank" href="/Resume.pdf">
+                  <Button
+                    variant="contained"
+                    color="secondary"
+                    size="small"
+                    className={classes.buttonText}
+                  >
+                    resume.
+                  </Button>
                 </a>
-              </Link>
-              <a target="_blank" href="/Resume.pdf">
-                <Button
-                  variant="contained"
-                  color="secondary"
-                  size="small"
-                  className={classes.buttonText}
-                >
-                  resume.
-                </Button>
-              </a>
+              </div>
             </div>
-          </div>
 
-          <IconButton
-            edge="end"
-            className={classes.menuButton}
-            color="inherit"
-            aria-label="open drawer"
-          />
-          <div className={classes.mobileView}>
-            <React.Fragment>
-              <MenuIcon onClick={toggleDrawer(true)} />
-              <SwipeableDrawer
-                anchor="left"
-                open={mobileMenu}
-                onClose={toggleDrawer(false)}
-                onOpen={toggleDrawer(true)}
-              >
-                <div className={classes.headerLogo}>mark.the.dev</div>
-
-                <div
-                  className={classes.list}
-                  role="presentation"
-                  onClick={toggleDrawer(false)}
-                  onKeyDown={toggleDrawer(false)}
+            <IconButton
+              edge="end"
+              className={classes.menuButton}
+              color="inherit"
+              aria-label="open drawer"
+            />
+            <div className={classes.mobileView}>
+              <React.Fragment>
+                <MenuIcon onClick={toggleDrawer(true)} />
+                <SwipeableDrawer
+                  anchor="left"
+                  open={mobileMenu}
+                  onClose={toggleDrawer(false)}
+                  onOpen={toggleDrawer(true)}
                 >
-                  <List className={classes.mobileList}>
-                    {siteLinks.map((text, index) => (
-                      <ListItem button key={text} className={classes.listItem}>
-                        {text}
-                      </ListItem>
-                    ))}
-                    <Button
-                      variant="contained"
-                      color="secondary"
-                      size="small"
-                      className={classes.buttonText}
-                    >
-                      resume.
-                    </Button>
-                  </List>
-                </div>
-              </SwipeableDrawer>
-            </React.Fragment>
-          </div>
-        </Toolbar>
-      </AppBar>
+                  <div className={classes.headerLogo}>mark.the.dev</div>
+
+                  <div
+                    className={classes.list}
+                    role="presentation"
+                    onClick={toggleDrawer(false)}
+                    onKeyDown={toggleDrawer(false)}
+                  >
+                    <List className={classes.mobileList}>
+                      {siteLinks.map((text, index) => (
+                        <ListItem
+                          button
+                          key={text}
+                          className={classes.listItem}
+                        >
+                          {text}
+                        </ListItem>
+                      ))}
+                      <Button
+                        variant="contained"
+                        color="secondary"
+                        size="small"
+                        className={classes.buttonText}
+                      >
+                        resume.
+                      </Button>
+                    </List>
+                  </div>
+                </SwipeableDrawer>
+              </React.Fragment>
+            </div>
+          </Toolbar>
+        </AppBar>
+      </Fade>
     </div>
   );
 }

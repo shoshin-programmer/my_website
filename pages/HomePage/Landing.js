@@ -1,7 +1,7 @@
 import React from "react";
 import { fade, makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
-import CssBaseline from "@material-ui/core/CssBaseline";
+import Fade from "react-reveal/Fade";
 
 const useStyles = makeStyles((theme) => ({
   landingContainer: {
@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(2),
     fontSize: 45,
     fontWeight: "bold",
-    marginTop: '20%',
+    marginTop: "20%",
     [theme.breakpoints.up("md")]: {
       fontSize: 90,
       marginTop: 20,
@@ -48,14 +48,17 @@ export default function Landing() {
     <div className={classes.landingContainer}>
       <div className={classes.darkOverlay}>
         <Container maxWidth="lg" disableGutters={true}>
-          <div className={classes.landingText}>
-            I AM
-            <br />
-            MARK ATIENZA,
-            <br />A FULLSTACK
-            <br />
-            WEB DEVELOPER
-          </div>
+          <Fade duration={1000} delay={1200}>
+            <div className={classes.landingText}>
+              I AM
+              <br />
+              MARK ATIENZA,
+              <br />A FULLSTACK
+              <br />
+              WEB DEVELOPER
+            </div>
+          </Fade>
+          <Fade bottom duration={1000} delay={1500}>
           <div className={classes.landingSecondary}>
             from plans
             <br />
@@ -63,6 +66,7 @@ export default function Landing() {
             <br />
             to products
           </div>
+          </Fade>
         </Container>
       </div>
     </div>

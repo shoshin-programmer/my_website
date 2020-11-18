@@ -1,0 +1,141 @@
+.container {
+  background-color: #050E19;
+  height: 100vh;
+}
+.fullPage {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: ease-out 0.1s;
+}
+
+.fullPage::before {
+  z-index: 998;
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 50%;
+  background: black;
+  animation-name: moveLeft;
+  animation-fill-mode: forwards;
+  animation-duration: 0.8s;
+  animation-timing-function: ease-in-out;
+  animation-delay: 3.6s;
+}
+
+.fullPage::after {
+  z-index: 998;
+  content: "";
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 50%;
+  background: black;
+  animation-name: moveRight;
+  animation-fill-mode: forwards;
+  animation-duration: 0.8s;
+  animation-timing-function: ease-in-out;
+  animation-delay: 3.6s;
+}
+.boxWrap {
+  position: relative;
+  height: 80px;
+  width: 80px;
+}
+.box {
+  position: fixed;
+  bottom: 50%;
+  left: 50%;
+  margin-left: -40px;
+  background: #000;
+  border: 0.25rem solid #fff;
+  height: 80px;
+  width: 80px;
+  outline: 0;
+  overflow: none;
+  z-index: 999;
+  animation: fade-out 3.5s ease-in-out forwards;
+}
+.box::before {
+  content: url("../../public/a-text.svg");
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.box::after {
+  content: "";
+  position: absolute;
+  bottom: -50%;
+  left: -50%;
+  height: 200%;
+  width: 200%;
+  background-color: #000000;
+  border-radius: 35%;
+  animation: spin 3.8s ease-in-out forwards;
+}
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+    -webkit-transform: scale(0.1);
+  }
+  5% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+  }
+
+  75% {
+    opacity: 1;
+    -webkit-transform: scale(1.05);
+  }
+  95% {
+    opacity: 1;
+    -webkit-transform: scale(1.15);
+  }
+  100% {
+    -webkit-transform: scale(0.1);
+    opacity: 0;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  90% {
+    transform: translateY(-100%) rotate(400deg);
+  }
+  100% {
+    visibility: none;
+  }
+}
+@keyframes moveRight {
+  0% {
+    -webkit-transform: translateX(0%); /* Chrome, Opera 15+, Safari 3.1+ */
+    -ms-transform: translateX(0%); /* IE 9 */
+    transform: translateX(0%); /* Firefox 16+, IE 10+, Opera */
+  }
+  100% {
+    -webkit-transform: translateX(100%); /* Chrome, Opera 15+, Safari 3.1+ */
+    -ms-transform: translateX(100%); /* IE 9 */
+    transform: translateX(100%); /* Firefox 16+, IE 10+, Opera */
+  }
+}
+
+@keyframes moveLeft {
+  0% {
+    -webkit-transform: translateX(0%); /* Chrome, Opera 15+, Safari 3.1+ */
+    -ms-transform: translateX(0%); /* IE 9 */
+    transform: translateX(0%); /* Firefox 16+, IE 10+, Opera */
+  }
+  100% {
+    -webkit-transform: translateX(-100%); /* Chrome, Opera 15+, Safari 3.1+ */
+    -ms-transform: translateX(-100%); /* IE 9 */
+    transform: translateX(-100%); /* Firefox 16+, IE 10+, Opera */
+  }
+}

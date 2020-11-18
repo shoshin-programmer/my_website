@@ -2,6 +2,7 @@ import React from "react";
 import { fade, makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import Featured from "../../components/Featured";
+import Fade from "react-reveal/Fade";
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -22,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(2),
     fontSize: 30,
     fontWeight: "bold",
-    letterSpacing: '1px',
+    letterSpacing: "1px",
     [theme.breakpoints.up("md")]: {
       fontSize: 60,
       marginTop: 20,
@@ -44,14 +45,16 @@ export default function Projects() {
   return (
     <div className={classes.container}>
       <div className={classes.darkOverlay}>
-        <Container maxWidth="lg" disableGutters={true}>
-          <div className={classes.title}>
-            Designing from your ideas and personality into a website.
-          </div>
-          <div className={classes.featureContainer}>
-            <Featured post={content} />
-          </div>
-        </Container>
+        <Fade bottom duration={2000} cascade>
+          <Container maxWidth="lg" disableGutters={true}>
+            <div className={classes.title}>
+              Designing from your ideas and personality into a website.
+            </div>
+            <div className={classes.featureContainer}>
+              <Featured post={content} />
+            </div>
+          </Container>
+        </Fade>
       </div>
     </div>
   );
