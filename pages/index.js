@@ -41,14 +41,12 @@ export default function Home() {
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <Header />
+      <Landing />
       {loading ? (
         <FullPageLoader />
       ) : (
         <React.Fragment>
-          <Header />
-          <Fade cascade duration={3000} bottom delay={1000}>
-            <Landing />
-          </Fade>
           <Projects />
           <WorkSection />
         </React.Fragment>

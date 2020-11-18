@@ -88,9 +88,9 @@ export default function Header() {
 
   return (
     <div className={classes.grow}>
-      <Fade cascade duration={4000} top>
-        <AppBar position="fixed" className={classes.appBar}>
-          <Toolbar>
+      <AppBar position="fixed" className={classes.appBar}>
+        <Toolbar>
+          <Fade cascade top delay={4000}>
             <div className={classes.headerLogo}>mark.the.dev</div>
             <div className={classes.desktopView}>
               <div className={classes.headerLinks}>
@@ -173,9 +173,9 @@ export default function Header() {
                 </SwipeableDrawer>
               </React.Fragment>
             </div>
-          </Toolbar>
-        </AppBar>
-      </Fade>
+          </Fade>
+        </Toolbar>
+      </AppBar>
     </div>
   );
 }

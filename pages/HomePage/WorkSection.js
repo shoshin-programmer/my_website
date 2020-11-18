@@ -2,12 +2,13 @@ import React from "react";
 import { fade, makeStyles } from "@material-ui/core/styles";
 import WorkTabs from "../../components/WorkTabs.js";
 import Container from "@material-ui/core/Container";
+import Fade from "react-reveal/Fade";
 
 const useStyles = makeStyles((theme) => ({
   container: {
     minHeight: "100vh",
     width: "100vw",
-    background: "url('/work_bg.jpg')",
+    background: "url('/backgrounds/work_bg.jpg')",
     backgroundBlendMode: "fixed",
     backgroundSize: "cover",
     backgroundRepeat: "none",
@@ -37,8 +38,12 @@ export default function WorkSection() {
       <div className={classes.container}>
         <div className={classes.darkOverlay}>
           <Container maxWidth="lg" disableGutters={true}>
-            <div className={classes.titleContainer}>Experiences</div>
-            <WorkTabs />
+            <Fade bottom>
+              <div className={classes.titleContainer}>Experiences</div>
+            </Fade>
+            <Fade bottom>
+              <WorkTabs />
+            </Fade>
           </Container>
         </div>
       </div>

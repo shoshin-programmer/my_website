@@ -7,7 +7,7 @@ const useStyles = makeStyles((theme) => ({
   landingContainer: {
     minHeight: "100vh",
     width: "100vw",
-    background: "url('/landing.jpg')",
+    background: "url(/backgrounds/landing.jpg)",
     backgroundBlendMode: "fixed",
     backgroundSize: "cover",
     backgroundRepeat: "none",
@@ -48,7 +48,7 @@ export default function Landing() {
     <div className={classes.landingContainer}>
       <div className={classes.darkOverlay}>
         <Container maxWidth="lg" disableGutters={true}>
-          <Fade duration={1000} delay={1200}>
+          <Fade duration={1000} delay={4500}>
             <div className={classes.landingText}>
               I AM
               <br />
@@ -58,14 +58,14 @@ export default function Landing() {
               WEB DEVELOPER
             </div>
           </Fade>
-          <Fade bottom duration={1000} delay={1500}>
-          <div className={classes.landingSecondary}>
-            from plans
-            <br />
-            to designs
-            <br />
-            to products
-          </div>
+          <Fade bottom duration={1000} delay={4800}>
+            <div className={classes.landingSecondary}>
+              from plans
+              <br />
+              to designs
+              <br />
+              to products
+            </div>
           </Fade>
         </Container>
       </div>

@@ -8,7 +8,7 @@ const useStyles = makeStyles((theme) => ({
   container: {
     minHeight: "100vh",
     width: "100vw",
-    background: "url('/project_bg.jpg')",
+    background: "url('/backgrounds/project_bg.jpg')",
     backgroundBlendMode: "fixed",
     backgroundSize: "cover",
     backgroundRepeat: "none",
@@ -45,16 +45,18 @@ export default function Projects() {
   return (
     <div className={classes.container}>
       <div className={classes.darkOverlay}>
-        <Fade bottom duration={2000} cascade>
-          <Container maxWidth="lg" disableGutters={true}>
-            <div className={classes.title}>
+        <Container maxWidth="lg" disableGutters={true}>
+          <div className={classes.title}>
+            <Fade bottom cascade>
               Designing from your ideas and personality into a website.
-            </div>
-            <div className={classes.featureContainer}>
+            </Fade>
+          </div>
+          <div className={classes.featureContainer}>
+            <Fade bottom>
               <Featured post={content} />
-            </div>
-          </Container>
-        </Fade>
+            </Fade>
+          </div>
+        </Container>
       </div>
     </div>
   );
